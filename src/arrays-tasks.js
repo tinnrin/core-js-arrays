@@ -352,10 +352,8 @@ function createChunks(arr, chunkSize, result = []) {
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
 
-function generateOdds(len) {
-  return new Array(len).fill(0).map((el, ind) => {
-    return ind + ind + 1;
-  });
+function generateOdds(length) {
+  return Array.from({ length }, (el, ind) => ind + ind + 1);
 }
 
 /**
@@ -411,9 +409,7 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  const matrix = new Array(n);
-  matrix.fill([]);
-  return matrix.map((arr, i) => {
+  return Array.from({ length: n }, (arr, i) => {
     const item = new Array(n).fill(0);
     item[i] = 1;
     return item;
